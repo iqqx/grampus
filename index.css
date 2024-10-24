@@ -228,6 +228,10 @@
     --Stroke: #D4D4D4;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 h1 {
     color: #0C191F;
     font-size: 40px;
@@ -263,6 +267,17 @@ h6 {
     color: var(--Text);
     font-size: 12px;
     line-height: 135%;
+}
+
+input {
+    display: flex;
+    align-items: center;
+
+    padding: 20px;
+    background: none;
+    border: none;
+    border-bottom: var(--Text) 2px solid;
+    width: 100%;
 }
 
 button {
@@ -603,7 +618,7 @@ footer b {
     align-self: start;
 
     cursor: pointer;
-    border: 2px solid var(--Background);
+    border: 2px solid var(--Stroke);
     border-radius: 0 30px 0 30px;
     padding: 10px 30px;
 
@@ -614,8 +629,9 @@ footer b {
     transition: .25s ease-in-out;
 }
 
-block-6>div>label:hover {
-    background-color: var(--Hover);
+#block-6>div>label:hover {
+    border-color: var(--Hover);
+    color: var(--Hover)
 }
 
 #block-6>div>input:checked+label {
@@ -663,6 +679,7 @@ block-6>div>label:hover {
 #block-7>div {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 #block-7>div>img {
@@ -672,6 +689,7 @@ block-6>div>label:hover {
 #block-8 {
     display: flex;
     align-items: center;
+    gap: 20px;
 
     background-color: var(--Background2);
 }
@@ -797,6 +815,8 @@ bluetext {
 
     background-image: url(images/banner-11-1.png);
     height: 500px;
+
+    padding: 0 375px;
 }
 
 #block-11>h1,
@@ -883,7 +903,6 @@ bluetext {
 #block-14>div>div {
     display: flex;
     justify-content: space-between;
-    /* align-items: end; */
 
     background-color: var(--Background2);
     border-radius: 0 30px 0 30px;
@@ -1040,27 +1059,16 @@ bluetext {
     gap: 20px;
 }
 
-#block-19-bottom>input {
-    display: flex;
-    align-items: center;
-
-    padding: 20px;
-    background: none;
-    border: none;
-    border-bottom: var(--Stroke) 2px solid;
-    width: 100%;
-}
-
 #block-20 {
     display: flex;
     align-items: center;
 
     background: url(images/banner-20-1.png);
     height: 630px;
-    padding: 0 375px; 
+    padding: 0 375px;
 }
 
-#block-20>div {
+#block-20>form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -1071,12 +1079,12 @@ bluetext {
     max-width: 500px;
 }
 
-#block-20>div>span {
+#block-20>form>span {
     display: flex;
     gap: 10px;
 }
 
-#block-20>div>h3 {
+#block-20>form>h3 {
     color: #0C191F;
 }
 
@@ -1093,6 +1101,27 @@ bluetext {
     padding: 0;
 }
 
-#block-20>div>button:last-child {
+#block-20>form>button:last-child {
+    width: 100%;
+}
+
+#modal-buy {
+    background-color: var(--Background);
+
+    border: none;
+    border-radius: 0 30px 0 30px;
+}
+
+#modal-buy>form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#modal-buy>form>h1 {
+    margin: 0 50px;
+}
+
+#modal-buy>form>button {
     width: 100%;
 }

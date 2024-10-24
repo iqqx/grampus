@@ -8,9 +8,23 @@
 
     <link rel="icon" href="favicon.png">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script type="module">Fancybox.bind("[data-src]")</script>
 </head>
 
 <body>
+    <dialog id="modal-buy">
+        <form>
+            <h1>Форма обратной связи</h1>
+            <input required placeholder="ФИО">
+            <input type="tel" required placeholder="Телефон">
+            <input placeholder="Комментарий">
+            <button type="submit">Оформить заявку</button>
+        </form>
+    </dialog>
+
     <header>
         <img src="favicon.png">
         <section>
@@ -26,15 +40,15 @@
     </header>
 
     <nav>
-        <a href="#">О биофильтре</a><a href="#">О компании</a><a href="#">Оборудование</a><a href="#">Создание
-            водоёмов</a><a href="#">FAQ</a><a href="#">Этапы работы</a>
+        <a href="#about">О биофильтре</a><a href="#company">О компании</a><a href="#items">Оборудование</a><a href="#pools">Создание
+            водоёмов</a><a href="#faq">FAQ</a><a href="#stages">Этапы работы</a>
     </nav>
 
     <section class="block" id="block-1">
         <div id="block-1-main">
             <h1>Настоящий Биофильтр<br>Проект Михайлова</h1>
             <h3>Красота и безмятежность лотоса на водной глади</h3>
-            <button>Оставить заявку</button>
+            <button data-src="#modal-buy">Оставить заявку</button>
         </div>
 
         <div class="controlsButtons" id="block-1-controls">
@@ -44,6 +58,7 @@
     </section>
 
     <section class="block" id="block-2">
+        <a name="about"></a>
         <h1>Что такое биофильтр?</h1>
         <span>
             <h4>В биофильтре «Проекта Михайлова» устранены все конструктивные минусы и устаревший подход к принципам
@@ -223,9 +238,9 @@
 
     <section class="block" id="block-6">
         <h1>Запуск и консервация биофильтра, контроль работы</h1>
-        <div><input checked type="radio" name="block-6-radio" id="block-6-radio-1" /><label for="block-6-radio-1">Запуск
-                в
-                работу</label><input type="radio" name="block-6-radio" id="block-6-radio-2" /><label
+        <div>
+            <input checked type="radio" name="block-6-radio" id="block-6-radio-1" /><label for="block-6-radio-1">Запуск
+                в работу</label><input type="radio" name="block-6-radio" id="block-6-radio-2" /><label
                 for="block-6-radio-2">Консервация на зиму</label><input type="radio" name="block-6-radio"
                 id="block-6-radio-3" /><label for="block-6-radio-3">Контроль работы биофильтра</label>
         </div>
@@ -349,12 +364,13 @@
                     <h4>250 000 $</h4>
                     <h2>249 000 руб.</h2>
                 </div>
-                <button>Оформить заявку</button>
+                <button data-src="#modal-buy">Оформить заявку</button>
             </div>
         </div>
     </section>
 
     <section class="block" id="block-10">
+        <a name="items"></a>
         <h1>Оборудование и материалы для фильтра
             <div class="controlsButtons controlsButtonsBlack">
                 <button disabled><img src="images/arrowStroke.svg"></button>
@@ -374,7 +390,7 @@
                         </span>
                         <br>
                         </h3>
-                        <button>Оформить заявку</button>
+                        <button data-src="#modal-buy">Оформить заявку</button>
                     </div>
                 </div>
             </div>
@@ -389,7 +405,7 @@
                             <h4>10 000 руб.</h4>
                         </span>
                         <br>
-                        <button>Оформить заявку</button>
+                        <button data-src="#modal-buy">Оформить заявку</button>
                     </div>
                 </div>
             </div>
@@ -405,7 +421,7 @@
                         </span>
                         </h3>
                         <br>
-                        <button>Оформить заявку</button>
+                        <button data-src="#modal-buy">Оформить заявку</button>
                     </div>
                 </div>
             </div>
@@ -415,10 +431,11 @@
     <section class="block" id="block-11">
         <h1>Создание водоемов<br>по типовому проекту Михайлова</h1>
         <h3>С установкой собственной фильтрационной системы.</h3>
-        <button>Закзать</button>
+        <button data-src="#modal-buy">Заказать</button>
     </section>
 
     <section class="block" id="block-12">
+        <a name="company"></a>
         <h1>О проекте Михайлова</h1>
         <span>
             <h4>Создание водоемов по собственному оригинальному проекту. С системой фильтрации.
@@ -464,7 +481,7 @@
                 </span>
                 <br>
                 <div>
-                    <button>Оформить заявку</button>
+                    <button data-src="#modal-buy">Оформить заявку</button>
                     <div class="controlsButtons controlsButtonsBlack">
                         <button disabled><img src="images/arrowStroke.svg"></button>
                         <button><img src="images/arrowBlack.svg"></button>
@@ -511,6 +528,7 @@
     </section>
 
     <section class="block" id="block-15">
+        <a name="faq"></a>
         <h1>Частые вопросы</h1>
         <button>
             <h3>Пластик дешевле. Почему дорогая нержавейка?</h3><img src="images/arrowDown.svg">
@@ -535,11 +553,12 @@
         </button>
 
         <div>
-            <button>Задать вопрос</button>
+            <button data-src="#modal-buy">Задать вопрос</button>
         </div>
     </section>
 
     <section class="block" id="block-16">
+        <a name="stages"></a>
         <h1>Этапы работы с покупателями биофильтра</h1>
         <div>
             <div>
@@ -553,7 +572,7 @@
                 <h4>Заказать систему фильтрации можно на сайте заполнив форму заявки. Вы получите счет на оплату и
                     договор на поставку.</h4>
                 <br>
-                <button>Оформить заявку</button>
+                <button data-src="#modal-buy">Оформить заявку</button>
             </div>
             <div>
                 <span>
@@ -595,6 +614,7 @@
     <section class="block" id="block-17"></section>
 
     <section class="block" id="block-18">
+        <a name="pools"></a>
         <h1>Этапы работы с заказчиками создания водоемов</h1>
         <div>
             <div>
@@ -607,7 +627,7 @@
                 <br>
                 <h4>Заполните заявку на выезд специалиста. Вы получите счет на оплату и договор на оказание услуг.</h4>
                 <br>
-                <button>Оформить заявку</button>
+                <button data-src="#modal-buy">Оформить заявку</button>
             </div>
             <div>
                 <span>
@@ -635,7 +655,7 @@
             </div>
             <div>
                 <span>
-                    <h1>03</h1>
+                    <h1>04</h1>
                     <vr>
                 </span> <br>
                 <h3>Строительство</h3> <br>
@@ -662,7 +682,7 @@
     </section>
 
     <section class="block" id="block-20">
-        <div>
+        <form>
             <h1>Адреса и контакты</h1>
             <span>
                 <img src="images/address.svg">
@@ -681,7 +701,7 @@
             <h3>georgyrmikhailov@yandex.ru</h3>
             <button id="whatapp"><img src="images/whatsapp.svg"></button>
             <button>Оставить заявку на звонок</button>
-        </div>
+        </form>
     </section>
 
     <footer>
