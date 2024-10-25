@@ -1,0 +1,145 @@
+@media (min-width: 450px) {
+    #header-mobile-contacts {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    header>section>span:first-child {
+        display: none;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    #header-full-contacts {
+        display: none;
+    }
+
+    footer>div {
+        justify-content: center;
+    }
+
+    footer>div>h3:first-child {
+        display: none;
+    }
+
+    #block-4>div>div,
+    #block-5>div {
+        padding: 15px;
+    }
+
+    #block-9-bottom {
+        flex-direction: column;
+    }
+
+    .controlsButtonsBlack {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    header>section>span:first-child {
+        display: none;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    h4,
+    li,
+    input {
+        font-size: 13.5px;
+    }
+
+    h5 {
+        font-size: 10.5px;
+    }
+
+    h6 {
+        line-height: 135%;
+    }
+
+    button {
+        font-size: 12px;
+    }
+
+    #block-1-main>h1 {
+        color: var(--Background);
+        font-size: 48px;
+        width: fit-content;
+    }
+
+    #block-6-radio>label {
+        width: 100%;
+    }
+
+    #block-11 h1,
+    #block-11 h3 {
+        text-align: center;
+        width: 100%;
+    }
+
+    #block-14>div>span {
+        padding: 20px;
+    }
+
+    #block-20>form>button:last-child {
+        padding: 20px 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    #block-1-main,
+    #block-11 {
+        align-items: center;
+        text-align: center;
+    }
+
+    #block-2>span,
+    #block-12>span {
+        flex-direction: column;
+    }
+
+    #block-2>span:last-child,
+    #block-12>span:last-child {
+        flex-direction: column-reverse;
+    }
+
+    #block-6-main>img,
+    #block-7>img,
+    #block-9>img {
+        display: none;
+    }
+
+    #block-5,
+    #block-8,
+    #block-13,
+    #block-19-bottom {
+        flex-direction: column;
+    }
+
+    #block-19-bottom>input {
+        width: auto;
+    }
+
+    #block-20 {
+        justify-content: center;
+        /* width: auto; */
+    }
+
+    #block-20>form {
+        padding: 15px;
+    }
+}

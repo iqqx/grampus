@@ -226,6 +226,9 @@
     --Background2: #E9EDED;
     --Text: #556063;
     --Stroke: #D4D4D4;
+
+    --Padding: 375px;
+    --MaxWidth: 1115px;
 }
 
 html {
@@ -284,7 +287,7 @@ button {
     background-color: var(--Primary);
     color: var(--Background);
 
-    align-self: start;
+    width: fit-content;
 
     cursor: pointer;
     border: none;
@@ -312,7 +315,6 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-
 
     background: none;
     border: 2px white solid;
@@ -347,16 +349,15 @@ button:hover {
 
 header {
     display: flex;
-    justify-content: flex-start;
-
-    padding: 10px 375px;
 
     height: 100px;
+    max-width: var(--MaxWidth);
+    margin: 0 auto;
+    padding: 10px 15px;
 }
 
 header>section {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
     margin-left: 10px;
@@ -366,11 +367,12 @@ header>section {
 header>section>span {
     display: flex;
     flex-direction: column;
-
     gap: 10px;
+
+    width: 100%;
 }
 
-header>section>span:last-child>h3 {
+header h3 {
     display: flex;
     align-items: center;
     justify-content: end;
@@ -378,37 +380,54 @@ header>section>span:last-child>h3 {
     gap: 10px;
 }
 
+header>section>span:first-child>h3 {
+    align-items: center;
+    justify-content: start;
+
+    gap: 10px;
+}
+
 nav {
+    background-color: var(--Primary);
+}
+
+nav>div {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 20px;
 
-    background-color: var(--Primary);
-
-    padding: 0 375px;
-    height: 42px;
+    padding: 12px 15px;
+    margin: 0 auto;
+    max-width: var(--MaxWidth);
 }
 
-nav a {
+nav>div>a {
     color: var(--Background);
 
     text-decoration: none;
     font-size: 16px;
-    line-height: 135%;
+    text-align: center;
 }
 
 footer {
+    background-color: #0C191F;
+}
+
+footer>div {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 
-    background-color: #0C191F;
-    padding: 0 375px;
-    height: 86px;
+    max-width: var(--MaxWidth);
+    margin: 0 auto;
+    padding: 31px 15px;
 }
 
-footer h3 {
+footer>div>h3 {
     color: var(--Background);
     opacity: 25%;
     font-weight: 200;
@@ -426,27 +445,42 @@ footer b {
 
 .block {
     background-color: var(--Background);
-    padding: 50px 375px;
 }
 
-.block>h1 {
+.block-dark {
+    background-color: var(--Background2);
+}
+
+.block>div,
+.block-dark>div {
+    max-width: var(--MaxWidth);
+    margin: 0 auto;
+    padding: 50px 15px 50px 15px;
+}
+
+.block>h1,
+.block-dark>h1 {
     text-align: center;
 
-    margin-bottom: 30px;
+    padding-top: 100px;
 }
 
 #block-1 {
     position: relative;
 
     background-image: url(images/banner-1-1.png);
-
-    padding: 0 375px;
+    background-position: 50% 50%;
     height: 858px;
 }
 
 #block-1-main {
-    position: absolute;
     height: 100%;
+    min-width: fit-content;
+
+    width: auto;
+    max-width: var(--MaxWidth);
+    margin: 0 auto;
+    padding: 0 15px;
 
     display: flex;
     flex-direction: column;
@@ -458,11 +492,13 @@ footer b {
 #block-1-main>h1 {
     color: var(--Background);
     font-size: 64px;
+    width: fit-content;
 }
 
 #block-1-main>h3 {
     color: var(--Background);
     margin: 10px 0 100px 0;
+    width: fit-content;
 }
 
 #block-1-controls {
@@ -474,9 +510,6 @@ footer b {
 #block-12 {
     display: flex;
     flex-direction: column;
-
-    padding-bottom: 50px;
-
     gap: 30px;
 }
 
@@ -517,69 +550,54 @@ footer b {
     margin-bottom: 40px;
 }
 
-#block-3-list {
+#block-3 {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
-#block-3-list>div {
+#block-3>div {
     flex: 1 1 0;
+
+    min-width: 100px;
 }
 
 #block-4 {
-    background-color: var(--Background2);
-
-    padding-top: 100px;
-}
-
-#block-4-list>div>div {
-    background-color: var(--Background);
-    border-radius: 0 30px 0 30px;
-
-    padding: 30px;
-}
-
-#block-4-list {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-#block-4-list>div>div>h2 {
+#block-4>div {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+#block-4>div>div {
+    background-color: var(--Background);
+    border-radius: 0 30px 0 30px;
+
+    min-width: 150px;
+    flex: 1 1 0;
+    padding: 30px;
+}
+
+#block-4>div>div>h2 {
     color: var(--Primary);
 }
 
-#block-4-list>div:nth-child(1)>div {
-    aspect-ratio: 1/1;
-}
-
-#block-4-list>div:nth-child(2)>div {
-    aspect-ratio: 1.333/1;
-}
-
-#block-4-list>div {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-#block-4-list>div>div {
-    flex: 1 1 0;
-}
-
 #block-5 {
-    background-color: var(--Background2);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 #block-5>div {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-#block-5>div>div {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -590,32 +608,38 @@ footer b {
     border-radius: 0 30px 0 30px;
 }
 
-#block-5>div>div>span {
+#block-5>div>span {
     display: flex;
     justify-content: space-between;
 }
 
-#block-5>div>div>span>h4:last-child {
-    text-align: right;
+#block-5>div>span>h4:last-child {
     white-space: nowrap;
 }
 
-#block-6>div {
+#block-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+
+#block-6-radio {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
-#block-6>div>input {
+#block-6-radio>input {
     display: none;
 }
 
-#block-6>div>label {
+#block-6-radio>label {
     display: inline-block;
     background-color: white;
     color: var(--Text);
-
-    align-self: start;
 
     cursor: pointer;
     border: 2px solid var(--Stroke);
@@ -625,65 +649,96 @@ footer b {
     font-weight: 500;
     font-size: 16px;
     line-height: 135%;
+    text-align: center;
 
     transition: .25s ease-in-out;
 }
 
-#block-6>div>label:hover {
+#block-6-radio>label:hover {
     border-color: var(--Hover);
     color: var(--Hover)
 }
 
-#block-6>div>input:checked+label {
+#block-6-radio>input:checked+label {
     background-color: var(--Primary);
     border-color: var(--Primary);
     color: var(--Background);
 }
 
 #block-6-main {
-    margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+#block-6-main>h3 {
+    flex: 1 1 0;
 }
 
 #block-6-main>img {
     border-radius: 0 30px 0 30px;
+    object-fit: cover;
+    min-width: 0;
+    flex: 1 1 0;
 }
 
-#block-6-main li {
-    margin-left: 15px;
+/* 
+#block-6-main>h3>ul>li {
+    margin-left: 20px;
+} */
+
+li {
+    margin-left: 20px;
 }
 
-#block-6>span {
+#block-6>h3 {
     display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
 
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 0;
+    width: 100%;
     background-color: var(--Background2);
 }
 
-#block-6>span>h4 {
+#block-6>h3::before {
+    content: "!";
+
     display: flex;
     justify-content: center;
     align-items: baseline;
+    flex: 0 0 20px;
 
     color: var(--Primary);
-    font-weight: 1000;
+    font-weight: 600;
 
     border: 2px solid var(--Primary);
     border-radius: 100px;
-    margin-right: 10px;
+    margin-left: 20px;
 
     width: 20px;
     height: 20px;
+
+    aspect-ratio: 1 / 1;
 }
 
-#block-7>div {
+#block-7 {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-#block-7>div>img {
+#block-7>ul {
+    flex: 1 1 0;
+}
+
+#block-7>img {
     border-radius: 0 30px 0 30px;
+    object-fit: cover;
+    min-width: 0;
+    flex: 1 1 0;
 }
 
 #block-8 {
@@ -694,9 +749,15 @@ footer b {
     background-color: var(--Background2);
 }
 
+#block-8>div {
+    flex: 1 1 0;
+}
+
 #block-8>img {
-    border-radius: 0 30px 0 30px;
     box-shadow: 0 30px 60px 0 #234b5b15;
+    border-radius: 0 30px 0 30px;
+    flex: 1 1 0;
+    width: 100%;
 }
 
 bluetext {
@@ -708,6 +769,16 @@ bluetext {
     justify-content: space-between;
     align-items: center;
     gap: 50px;
+}
+
+#block-9>div {
+    flex: 1 1 0;
+}
+
+#block-9>img {
+    flex: 1 1 0;
+    width: 100%;
+    min-width: 0;
 }
 
 #block-9>div>div {
@@ -744,10 +815,6 @@ bluetext {
     color: var(--Text);
 }
 
-#block-10 {
-    background-color: var(--Background2);
-}
-
 #block-10>h1 {
     display: flex;
     justify-content: space-between;
@@ -759,7 +826,8 @@ bluetext {
 
 #block-10>div {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
 }
 
@@ -808,15 +876,21 @@ bluetext {
     border-radius: 0 30px 0 30px;
 }
 
+.block:has(> #block-11) {
+    background-image: url(images/banner-11-1.png);
+}
+
 #block-11 {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    background-image: url(images/banner-11-1.png);
     height: 500px;
+}
 
-    padding: 0 375px;
+#block-11 h1,
+#block-11 h3 {
+    width: 50%;
 }
 
 #block-11>h1,
@@ -831,44 +905,41 @@ bluetext {
 }
 
 #block-13 {
-    background-color: var(--Background2);
-}
-
-#block-13>div {
     display: flex;
     justify-content: space-between;
     gap: 30px;
 }
 
-#block-13>div>div {
+#block-13>div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 10px;
 
     flex: 1 1 0;
 }
 
-#block-13>div>div>h3 {
+#block-13>div>h3 {
     color: #0C191F;
 }
 
-#block-13>div>div>span {
+#block-13>div>span {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
 }
 
-#block-13>div>div>span>h4 {
+#block-13>div>span>h4 {
     flex: 0 0;
 }
 
-#block-13>div>div>span>h4:last-child {
+#block-13>div>span>h4:last-child {
     color: #0C191F;
     white-space: nowrap;
 }
 
-#block-13>div>div>span>figure {
+#block-13>div>span>figure {
     width: 100%;
     height: 0;
     border: var(--Text) 1px dashed;
@@ -877,63 +948,58 @@ bluetext {
     flex-shrink: 1;
 }
 
-#block-13>div>div>div {
+#block-13>div>div {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-#block-13>div>div>div>div>button:first-child {
+#block-13>div>div>div>button:first-child {
     border: var(--Stroke) 2px solid;
 }
 
-#block-13>div>img {
+#block-13>img {
     flex: 1 1 0;
     border-radius: 0 30px 0 30px;
 }
 
-#block-14>div {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
+#block-14 {
+    display: flex;
+    flex-wrap: wrap;
 
     gap: 30px;
 }
 
-#block-14>div>div {
+#block-14>div {
     display: flex;
     justify-content: space-between;
+    flex: 1 1 0;
+    width: 100%;
 
     background-color: var(--Background2);
-    border-radius: 0 30px 0 30px;
+    border-radius: 0 30px;
 }
 
-#block-14>div>div>span {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+#block-14>div>span {
     padding: 40px;
-}
 
-#block-14>div>div>span>h3 {
-    color: #0C191F;
-}
-
-#block-14>div>div>img {
-    min-width: 0;
-    max-width: 10000px;
-    height: fit-content;
-    align-self: flex-end;
-    padding: 10px;
-}
-
-#block-14>div>div>span,
-#block-14>div>div>img {
     flex: 1 1 0;
 }
 
-#block-14>div>div>span>h5 {
+#block-14>div>span>h3 {
+    color: #0C191F;
+}
+
+#block-14>div>span>h5 {
     color: var(--Text);
+}
+
+#block-14>div>img {
+    align-self: flex-end;
+    padding: 10px;
+
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 #block-15 {
@@ -941,14 +1007,13 @@ bluetext {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-
-    padding: 50px 475px;
 }
 
 #block-15>button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 
     background-color: var(--Background2);
 
@@ -960,6 +1025,9 @@ bluetext {
 
 #block-15>button>h3 {
     transition: .25s ease-in-out;
+
+    text-align: left;
+    white-space: normal;
 }
 
 #block-15>button:hover {
@@ -975,81 +1043,91 @@ bluetext {
     padding: 20px 30px;
 }
 
-#block-16>div {
+#block-16 {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
-#block-16>div>div {
+#block-16>div {
+    min-width: 200px;
+
     flex: 1 1 0;
 }
 
-#block-16>div>div>span {
+#block-16>div>span {
     display: flex;
     align-items: baseline;
     gap: 10px;
 }
 
-#block-16>div>div>span>h1 {
+
+#block-16>div>button {
+    width: 100%;
+    padding: 20px 0;
+}
+
+#block-16>div>span>h1 {
     color: var(--Primary);
 }
 
-#block-16>div>div>span>vr {
+#block-16>div>span>vr {
     display: block;
     width: 100%;
     height: 1px;
     background-color: var(--Text);
-}
-
-#block-16>div>div ul {
-    padding-left: 20px;
 }
 
 #block-17 {
     background-image: url(images/banner-17-1.png);
+    background-position: 50% 0;
     height: 400px;
-    padding: 0;
 }
 
-#block-18>div {
+#block-18 {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
-#block-18>div>div {
+#block-18>div {
     flex: 1 1 0;
+
+    min-width: 200px;
 }
 
-#block-18>div>div>span {
+#block-18>div>span {
     display: flex;
     align-items: baseline;
     gap: 10px;
 }
 
-#block-18>div>div>span>h1 {
+#block-18>div>button {
+    width: 100%;
+    padding: 20px 0;
+}
+
+#block-18>div>span>h1 {
     color: var(--Primary);
 }
 
-#block-18>div>div>span>vr {
+#block-18>div>span>vr {
     display: block;
     width: 100%;
     height: 1px;
     background-color: var(--Text);
 }
 
-#block-18>div>div ul {
-    padding-left: 20px;
+.block:has(> #block-19) {
+    background-color: var(--Primary);
+    padding: 60px 5px;
 }
 
 #block-19 {
-    background-color: var(--Primary);
-}
-
-#block-19>div {
     background-color: var(--Background);
-    padding: 30px;
+
     border-radius: 0 30px 0 30px;
 }
 
@@ -1059,13 +1137,16 @@ bluetext {
     gap: 20px;
 }
 
+.block:has(> #block-20) {
+    background: url(images/banner-20-1.png);
+    height: 630px;
+}
+
 #block-20 {
     display: flex;
     align-items: center;
 
-    background: url(images/banner-20-1.png);
-    height: 630px;
-    padding: 0 375px;
+    /* width: 100%; */
 }
 
 #block-20>form {
@@ -1075,8 +1156,9 @@ bluetext {
 
     border-radius: 0 30px 0 30px;
     background-color: var(--Background);
-    padding: 30px 40px;
+
     max-width: 500px;
+    padding: 30px 40px;
 }
 
 #block-20>form>span {
